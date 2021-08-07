@@ -1,0 +1,26 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: DAMPoolFactory
+    network: mumbai
+    source:
+      address: "0xDB595e50C514144EdC74deE8A0fc02180C79ade6"
+      abi: DAMPoolFactory
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.2
+      language: wasm/assemblyscript
+      entities:
+        - DAMPoolCreated
+        - OwnershipTransferred
+      abis:
+        - name: DAMPoolFactory
+          file: ./abis/DAMPoolFactory.json
+      eventHandlers:
+        - event: DAMPoolCreated(address,address,address,string,string)
+          handler: handleDAMPoolCreated
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/mapping.ts
