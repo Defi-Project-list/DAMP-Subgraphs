@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -6,11 +6,12 @@ dataSources:
     name: DAMPoolFactory
     network: mumbai
     source:
-      address: "0xDB595e50C514144EdC74deE8A0fc02180C79ade6"
+      address: '0xDB595e50C514144EdC74deE8A0fc02180C79ade6'
       abi: DAMPoolFactory
+      startBlock: 17224045
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.2
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
         - DAMPoolCreated
@@ -23,4 +24,100 @@ dataSources:
           handler: handleDAMPoolCreated
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-      file: ./src/mapping.ts
+      file: ./src/DAMPoolFactory.ts
+  - kind: ethereum/contract
+    name: ComptrollerFactory
+    network: mumbai
+    source:
+      address: '0x83668eBbdDDF4a004358F60450A219e7F4CD2A51'
+      abi: ComptrollerFactory
+      startBlock: 17224040
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - ComptrollerCreated
+        - OwnershipTransferred
+      abis:
+        - name: ComptrollerFactory
+          file: ./abis/ComptrollerFactory.json
+      eventHandlers:
+        - event: ComptrollerCreated(address,address)
+          handler: handleComptrollerCreated
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/ComptrollerFactory.ts
+templates:
+  - kind: ethereum/contract
+    name: DAMPool
+    network: mumbai
+    source:
+      abi: DAMPool
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - AdapterCalled
+        - AddManager
+        - PoolCreated
+        - RemoveManager
+        - TopupComptroller
+        - TopupDAMPool
+        - TrackToken
+        - UntrackToken
+      abis:
+        - name: DAMPool
+          file: ./abis/DAMPool.json
+      eventHandlers:
+        - event: AdapterCalled(address,address,address,address,string,uint256)
+          handler: handleAdapterCalled
+        - event: AddManager(address,uint256)
+          handler: handleAddManager
+        - event: PoolCreated(address,address,string,string,address)
+          handler: handlePoolCreated
+        - event: RemoveManager(address,uint256)
+          handler: handleRemoveManager
+        - event: TopupComptroller(uint256,uint256)
+          handler: handleTopupComptroller
+        - event: TopupDAMPool(uint256,uint256)
+          handler: handleTopupDAMPool
+        - event: TrackToken(address)
+          handler: handleTrackToken
+        - event: UntrackToken(address)
+          handler: handleUntrackToken
+      file: ./src/DAMPool.ts
+  - kind: ethereum/contract
+    name: ComptrollerV2
+    network: mumbai
+    source:
+      abi: ComptrollerV2
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - AgreementCreated
+        - AgreementTerminated
+        - AgreementUpdated
+        - ComptrollerCreated
+        - RequestAmount
+        - Withdrawal
+      abis:
+        - name: ComptrollerV2
+          file: ./abis/ComptrollerV2.json
+      eventHandlers:
+        - event: AgreementCreated(address,uint256,uint256)
+          handler: handleAgreementCreated
+        - event: AgreementTerminated(address,uint256,uint256)
+          handler: handleAgreementTerminated
+        - event: AgreementUpdated(address,uint256,uint256)
+          handler: handleAgreementUpdated
+        - event: ComptrollerCreated(address,address,address)
+          handler: handleComptrollerCreated
+        - event: RequestAmount(address,uint256,uint256)
+          handler: handleRequestAmount
+        - event: Withdrawal(address,uint256,uint256)
+          handler: handleWithdrawal
+      file: ./src/ComptrollerV2.ts

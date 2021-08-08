@@ -1,6 +1,11 @@
-type ExampleEntity @entity {
+type Pool @entity {
   id: ID!
-  count: BigInt!
-  _deployer: Bytes! # address
-  _DAMPool: Bytes! # address
+  name: String!
+  comptroller: Bytes! # address
+  assetName: String!
+}
+
+type Comptroller @entity {
+  id: ID!
+  pool: Bytes
 }
