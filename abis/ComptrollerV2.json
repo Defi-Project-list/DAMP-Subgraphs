@@ -1,7 +1,11 @@
 [
   {
     "inputs": [
-      { "internalType": "address", "name": "_owner", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      },
       {
         "internalType": "contract ISuperfluid",
         "name": "_host",
@@ -24,6 +28,12 @@
   {
     "anonymous": false,
     "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_comptroller",
+        "type": "address"
+      },
       {
         "indexed": false,
         "internalType": "address",
@@ -52,6 +62,12 @@
       {
         "indexed": false,
         "internalType": "address",
+        "name": "_comptroller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
         "name": "_sender",
         "type": "address"
       },
@@ -74,6 +90,12 @@
   {
     "anonymous": false,
     "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_comptroller",
+        "type": "address"
+      },
       {
         "indexed": false,
         "internalType": "address",
@@ -127,6 +149,12 @@
       {
         "indexed": false,
         "internalType": "address",
+        "name": "_comptroller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
         "name": "_receiver",
         "type": "address"
       },
@@ -152,6 +180,12 @@
       {
         "indexed": false,
         "internalType": "address",
+        "name": "_comptroller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
         "name": "_receiver",
         "type": "address"
       },
@@ -174,21 +208,39 @@
   {
     "inputs": [],
     "name": "DAMPool",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "_calcTotalAmount",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "_getNetFlow",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -204,13 +256,35 @@
         "name": "_agreementClass",
         "type": "address"
       },
-      { "internalType": "bytes32", "name": "", "type": "bytes32" },
-      { "internalType": "bytes", "name": "agreementData", "type": "bytes" },
-      { "internalType": "bytes", "name": "", "type": "bytes" },
-      { "internalType": "bytes", "name": "_ctx", "type": "bytes" }
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "agreementData",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_ctx",
+        "type": "bytes"
+      }
     ],
     "name": "afterAgreementCreated",
-    "outputs": [{ "internalType": "bytes", "name": "newCtx", "type": "bytes" }],
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "newCtx",
+        "type": "bytes"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -226,13 +300,35 @@
         "name": "_agreementClass",
         "type": "address"
       },
-      { "internalType": "bytes32", "name": "", "type": "bytes32" },
-      { "internalType": "bytes", "name": "", "type": "bytes" },
-      { "internalType": "bytes", "name": "_cbdata", "type": "bytes" },
-      { "internalType": "bytes", "name": "_ctx", "type": "bytes" }
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_cbdata",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_ctx",
+        "type": "bytes"
+      }
     ],
     "name": "afterAgreementTerminated",
-    "outputs": [{ "internalType": "bytes", "name": "newCtx", "type": "bytes" }],
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "newCtx",
+        "type": "bytes"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -248,26 +344,74 @@
         "name": "_agreementClass",
         "type": "address"
       },
-      { "internalType": "bytes32", "name": "", "type": "bytes32" },
-      { "internalType": "bytes", "name": "", "type": "bytes" },
-      { "internalType": "bytes", "name": "_cbdata", "type": "bytes" },
-      { "internalType": "bytes", "name": "_ctx", "type": "bytes" }
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_cbdata",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_ctx",
+        "type": "bytes"
+      }
     ],
     "name": "afterAgreementUpdated",
-    "outputs": [{ "internalType": "bytes", "name": "newCtx", "type": "bytes" }],
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "newCtx",
+        "type": "bytes"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "contract ISuperToken", "name": "", "type": "address" },
-      { "internalType": "address", "name": "", "type": "address" },
-      { "internalType": "bytes32", "name": "", "type": "bytes32" },
-      { "internalType": "bytes", "name": "", "type": "bytes" },
-      { "internalType": "bytes", "name": "", "type": "bytes" }
+      {
+        "internalType": "contract ISuperToken",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
     ],
     "name": "beforeAgreementCreated",
-    "outputs": [{ "internalType": "bytes", "name": "", "type": "bytes" }],
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -283,12 +427,30 @@
         "name": "agreementClass",
         "type": "address"
       },
-      { "internalType": "bytes32", "name": "", "type": "bytes32" },
-      { "internalType": "bytes", "name": "", "type": "bytes" },
-      { "internalType": "bytes", "name": "ctx", "type": "bytes" }
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "ctx",
+        "type": "bytes"
+      }
     ],
     "name": "beforeAgreementTerminated",
-    "outputs": [{ "internalType": "bytes", "name": "cbdata", "type": "bytes" }],
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "cbdata",
+        "type": "bytes"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -304,46 +466,108 @@
         "name": "agreementClass",
         "type": "address"
       },
-      { "internalType": "bytes32", "name": "", "type": "bytes32" },
-      { "internalType": "bytes", "name": "", "type": "bytes" },
-      { "internalType": "bytes", "name": "ctx", "type": "bytes" }
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "ctx",
+        "type": "bytes"
+      }
     ],
     "name": "beforeAgreementUpdated",
-    "outputs": [{ "internalType": "bytes", "name": "cbdata", "type": "bytes" }],
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "cbdata",
+        "type": "bytes"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_user", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      }
     ],
     "name": "calcShare",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_user", "type": "address" },
-      { "internalType": "uint256", "name": "_flowRate", "type": "uint256" },
-      { "internalType": "uint256", "name": "_flowTimeStamp", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_flowRate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_flowTimeStamp",
+        "type": "uint256"
+      }
     ],
     "name": "calcUserInvested",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_user", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      }
     ],
     "name": "calcUserUninvested",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "depositDetails",
     "outputs": [
       {
@@ -356,7 +580,11 @@
         "name": "investedAmount",
         "type": "uint256"
       },
-      { "internalType": "uint256", "name": "withdrawnSum", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "withdrawnSum",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "prevWithdrawTimeStamp",
@@ -369,7 +597,13 @@
   {
     "inputs": [],
     "name": "depositedAmount",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -383,27 +617,49 @@
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "prevFlowUpdate",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "prevManageTime",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_DAMPool", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_DAMPool",
+        "type": "address"
+      }
     ],
     "name": "setDAMPool",
     "outputs": [],
@@ -412,7 +668,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_amount", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
     ],
     "name": "withdrawAmount",
     "outputs": [],
@@ -421,19 +681,38 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_caller", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_caller",
+        "type": "address"
+      }
     ],
     "name": "withdrawable",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "withdrawnSum",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
-  { "stateMutability": "payable", "type": "receive" }
+  {
+    "stateMutability": "payable",
+    "type": "receive"
+  }
 ]

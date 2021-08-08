@@ -1,11 +1,26 @@
 type Pool @entity {
   id: ID!
   name: String!
-  comptroller: Bytes! # address
+  comptroller: Comptroller! # address
   assetName: String!
+  deployer: Bytes!
+  Managers: [Manager!]!
 }
 
 type Comptroller @entity {
   id: ID!
-  pool: Bytes
+  pool: Pool
+  requestedAmount: BigInt!
+  deployer: Bytes!
+  Managers: [Manager!]!
+}
+
+type Manager @entity {
+  id: ID!
+  pools: [Pool!]!
+}
+
+type UserComptroller @entity {
+  id: ID!
+  withdrawals: [BigInt!]!
 }

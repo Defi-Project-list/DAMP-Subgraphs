@@ -6,9 +6,9 @@ dataSources:
     name: DAMPoolFactory
     network: mumbai
     source:
-      address: '0xDB595e50C514144EdC74deE8A0fc02180C79ade6'
+      address: '0x9c5152171bd58c18a0a678c08fb821571814bd8a'
       abi: DAMPoolFactory
-      startBlock: 17224045
+      startBlock: 17373127
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -20,7 +20,7 @@ dataSources:
         - name: DAMPoolFactory
           file: ./abis/DAMPoolFactory.json
       eventHandlers:
-        - event: DAMPoolCreated(address,address,address,string,string)
+        - event: DAMPoolCreated(address,address,address,address[],string,string)
           handler: handleDAMPoolCreated
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
@@ -71,21 +71,21 @@ templates:
         - name: DAMPool
           file: ./abis/DAMPool.json
       eventHandlers:
-        - event: AdapterCalled(address,address,address,address,string,uint256)
+        - event: AdapterCalled(address,address,address,address,address,string,uint256)
           handler: handleAdapterCalled
-        - event: AddManager(address,uint256)
+        - event: AddManager(address,address,uint256)
           handler: handleAddManager
         - event: PoolCreated(address,address,string,string,address)
           handler: handlePoolCreated
-        - event: RemoveManager(address,uint256)
+        - event: RemoveManager(address,address,uint256)
           handler: handleRemoveManager
-        - event: TopupComptroller(uint256,uint256)
+        - event: TopupComptroller(address,uint256,uint256)
           handler: handleTopupComptroller
         - event: TopupDAMPool(uint256,uint256)
           handler: handleTopupDAMPool
-        - event: TrackToken(address)
+        - event: TrackToken(address,address)
           handler: handleTrackToken
-        - event: UntrackToken(address)
+        - event: UntrackToken(address,address)
           handler: handleUntrackToken
       file: ./src/DAMPool.ts
   - kind: ethereum/contract
@@ -108,16 +108,16 @@ templates:
         - name: ComptrollerV2
           file: ./abis/ComptrollerV2.json
       eventHandlers:
-        - event: AgreementCreated(address,uint256,uint256)
+        - event: AgreementCreated(address,address,uint256,uint256)
           handler: handleAgreementCreated
-        - event: AgreementTerminated(address,uint256,uint256)
+        - event: AgreementTerminated(address,address,uint256,uint256)
           handler: handleAgreementTerminated
-        - event: AgreementUpdated(address,uint256,uint256)
+        - event: AgreementUpdated(address,address,uint256,uint256)
           handler: handleAgreementUpdated
         - event: ComptrollerCreated(address,address,address)
           handler: handleComptrollerCreated
-        - event: RequestAmount(address,uint256,uint256)
+        - event: RequestAmount(address,address,uint256,uint256)
           handler: handleRequestAmount
-        - event: Withdrawal(address,uint256,uint256)
+        - event: Withdrawal(address,address,uint256,uint256)
           handler: handleWithdrawal
       file: ./src/ComptrollerV2.ts
